@@ -41,10 +41,12 @@ int main(int argc, char** argv) {
     y->enqueue(p);
     t_true(x->equals(y));
     t_true(x->peek()->equals(q));
-    z->enqueue(a)->enqueue(b);
-    t_true(z->size() == 2);
-    t_true(z->dequeue()->equals(a));
-    t_true(z->peek()->equals(b));
+    
+    Queue* w = new Queue();
+    w->enqueue(a)->enqueue(b);
+    t_true(w->size() == 2);
+    t_true(w->dequeue()->equals(a));
+    t_true(w->peek()->equals(b));
 
     return 0;
 }
